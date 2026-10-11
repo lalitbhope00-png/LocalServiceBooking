@@ -1,0 +1,21 @@
+@model IEnumerable<Booking>
+<div class="container py-5">
+<h2>Customer Booking History</h2>
+<form method="get" class="row g-2 mb-4">
+<div class="col-md-6"><input name="mobile" value="@ViewBag.Mobile" class="form-control" placeholder="Enter mobile number" maxlength="10" /></div>
+<div class="col-md-2"><button class="btn btn-primary">Search</button></div>
+</form>
+@if (Model != null && Model.Any())
+{
+<div class="table-responsive"><table class="table table-bordered bg-white">
+<thead><tr><th>ID</th><th>Service</th><th>Date</th><th>Time</th><th>Status</th><th>Review</th></tr></thead>
+<tbody>
+@foreach (var b in Model)
+{
+<tr><td>@b.Id</td><td>@b.Service</td><td>@b.BookingDate.ToShortDateString()</td><td>@b.BookingTime</td><td>@b.Status</td>
+<td>@if (b.Status == "Completed") { <a asp-controller="Review" asp-action="Create" asp-route-bookingId="@b.Id" class="btn btn-sm btn-success">Review</a> } else { <span>-</span> }</td></tr>
+}
+</tbody></table></div>
+}
+else if (ViewBag.Mobile != null) { <div class="alert alert-info">No bookings found.</div> }
+</div>

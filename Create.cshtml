@@ -1,0 +1,8 @@
+@model Review
+<div class="container py-5" style="max-width:650px"><div class="card shadow-sm p-4"><h2>Rate & Review</h2>
+<form asp-action="Create" method="post"><input type="hidden" asp-for="BookingId" value="@ViewBag.BookingId" /><div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="mb-3"><label asp-for="CustomerName"></label><input asp-for="CustomerName" class="form-control" /></div>
+<div class="mb-3"><label asp-for="Mobile"></label><input asp-for="Mobile" class="form-control" /></div>
+<div class="mb-3"><label asp-for="Rating"></label><select asp-for="Rating" class="form-select"><option value="">Select</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
+<div class="mb-3"><label asp-for="ReviewText"></label><textarea asp-for="ReviewText" class="form-control"></textarea></div>
+<button class="btn btn-success">Submit Review</button></form></div></div>

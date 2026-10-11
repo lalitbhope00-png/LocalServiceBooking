@@ -1,0 +1,15 @@
+<div class="container py-5">
+<h2>Admin Dashboard</h2>
+<div class="row g-4 my-2">
+<div class="col-md-3"><div class="card shadow-sm p-4"><h6>Total</h6><h2>@ViewBag.Total</h2></div></div>
+<div class="col-md-3"><div class="card shadow-sm p-4"><h6>Pending</h6><h2>@ViewBag.Pending</h2></div></div>
+<div class="col-md-3"><div class="card shadow-sm p-4"><h6>Completed</h6><h2>@ViewBag.Completed</h2></div></div>
+<div class="col-md-3"><div class="card shadow-sm p-4"><h6>Providers</h6><h2>@ViewBag.Providers</h2></div></div>
+</div>
+<div class="d-flex gap-2 flex-wrap mt-4">
+<a class="btn btn-primary" asp-action="Bookings">Manage Bookings</a>
+<a class="btn btn-success" asp-controller="Provider" asp-action="Index">Service Providers</a>
+<a class="btn btn-info" asp-controller="ReviewAdmin" asp-action="Index">Reviews</a>
+<a class="btn btn-danger" asp-controller="Account" asp-action="Logout">Logout</a>
+</div>
+</div>

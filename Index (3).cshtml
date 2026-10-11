@@ -1,0 +1,20 @@
+<section class="hero">
+<div class="container text-center">
+<h1 class="display-5 fw-bold">Local Service Booking</h1>
+<p class="lead">Book trusted local services quickly and easily.</p>
+</div>
+</section>
+<div class="container py-5">
+<div class="row g-4">
+@foreach (var service in new[] { "Electrician", "Plumber", "Mechanic", "AC Repair", "Salon", "Cleaning" })
+{
+<div class="col-md-4">
+<div class="card shadow-sm p-4 h-100">
+<h3>@service</h3>
+<p class="text-muted">Book a professional @service service.</p>
+<a class="btn btn-primary" asp-controller="Booking" asp-action="Index" asp-route-service="@service">Book a Service</a>
+</div>
+</div>
+}
+</div>
+</div>

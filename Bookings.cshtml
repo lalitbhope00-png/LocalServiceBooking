@@ -1,0 +1,15 @@
+@model IEnumerable<Booking>
+<div class="container py-5">
+<h2>Manage Bookings</h2>
+<div class="table-responsive"><table class="table table-bordered bg-white align-middle">
+<thead><tr><th>ID</th><th>Customer</th><th>Service</th><th>Mobile</th><th>Status</th><th>Update</th></tr></thead>
+<tbody>
+@foreach(var b in Model)
+{
+<tr><td>@b.Id</td><td>@b.CustomerName</td><td>@b.Service</td><td>@b.Mobile</td><td>@b.Status</td>
+<td><form asp-action="UpdateStatus" method="post" class="d-flex gap-2"><input type="hidden" name="id" value="@b.Id" />
+<select name="status" class="form-select"><option>Pending</option><option>Accepted</option><option>In Progress</option><option>Completed</option><option>Cancelled</option></select>
+<button class="btn btn-sm btn-primary">Save</button></form></td></tr>
+}
+</tbody></table></div>
+</div>

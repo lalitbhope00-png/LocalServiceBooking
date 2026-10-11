@@ -1,0 +1,5 @@
+@model IEnumerable<Review>
+<div class="container py-5"><h2>Customer Reviews</h2>
+<table class="table table-bordered bg-white"><thead><tr><th>Booking</th><th>Customer</th><th>Mobile</th><th>Rating</th><th>Review</th></tr></thead>
+<tbody>@foreach(var r in Model){<tr><td>@r.BookingId</td><td>@r.CustomerName</td><td>@r.Mobile</td><td>@r.Rating/5</td><td>@r.ReviewText</td></tr>}</tbody></table>
+</div>

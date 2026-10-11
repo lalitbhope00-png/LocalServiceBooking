@@ -1,0 +1,10 @@
+@model Booking
+<div class="container py-5">
+<div class="card shadow-sm p-5 text-center">
+<h1 class="text-success">Booking Successful!</h1>
+<p>Your booking has been submitted.</p>
+<p><strong>Booking ID:</strong> @Model.Id</p>
+<p><strong>Status:</strong> @Model.Status</p>
+<a class="btn btn-primary" asp-controller="Customer" asp-action="Bookings" asp-route-mobile="@Model.Mobile">View My Bookings</a>
+</div>
+</div>

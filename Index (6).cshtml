@@ -1,0 +1,6 @@
+@model IEnumerable<ServiceProvider>
+<div class="container py-5">
+<div class="d-flex justify-content-between align-items-center mb-3"><h2>Service Providers</h2><a class="btn btn-primary" asp-action="Create">Add Provider</a></div>
+<table class="table table-bordered bg-white"><thead><tr><th>Name</th><th>Service</th><th>Mobile</th><th>Experience</th><th>Available</th><th></th></tr></thead>
+<tbody>@foreach(var p in Model){<tr><td>@p.ProviderName</td><td>@p.Service</td><td>@p.Mobile</td><td>@p.Experience years</td><td>@(p.IsAvailable ? "Yes":"No")</td><td><a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@p.Id">Edit</a></td></tr>}</tbody></table>
+</div>
